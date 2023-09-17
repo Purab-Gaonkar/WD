@@ -248,4 +248,49 @@ body{
     margin-top: 50px;
     margin: 20px;
 }
-
+.log{
+    background-image: url("img/pxfuel.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    position: relative;
+}
+.log .lg{
+    padding: 50px 50px;
+    display: flex;
+    height: 50vh;
+    width: 50vh;
+    margin: 15% 35%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    color: yellow;
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    background:rgba(115, 147, 179, 0.05);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.4);
+}
+.log .lg button{
+    background: none;
+    border: 0;
+    color:yellow;
+}
+.log .lg input{
+    padding: 10px 20px;
+}
+.form{
+    margin: 1.2rem;
+}
+.form form input{
+    color: gray;
+    padding: 8px;
+    margin: 5px;
+}
+.form form select{
+    color: gray;
+    padding: 8px;
+}
+.form form .conta{
+    display: inline-block;
+}
