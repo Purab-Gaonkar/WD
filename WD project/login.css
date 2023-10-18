@@ -47,6 +47,9 @@ input{
 	outline: none;
 	border-radius: 15px;
 }
+input::placeholder{
+	color: lemonchiffon;
+}
 button{
 	width: 60%;
 	height: 40px;

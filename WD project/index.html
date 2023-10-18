@@ -26,19 +26,17 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Shop <span class="material-symbols-outlined">arrow_drop_down</span></a>
                     <div class="dropdown-content">
-                        <a href="shop.html">Camera Accessories</a>
-                        <a href="shop.html">Camera Lenses</a>
-                        <a href="shop.html">Category 3</a>
+                        <a href="shop.html#access">Camera Accessories</a>
+                        <a href="shop.html#lens">Camera Lenses</a>
                     </div>
                 </li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li>
-                    <button id="toggleCartButton"> <span class="material-symbols-outlined">
+                    <a href="#cart"><button id="toggleCartButton"> <span class="material-symbols-outlined">
                         shopping_bag
-                    </span><span id="cartCount" style="color: red;">0</span></button>
+                    </span><span id="cartCount" style="color: #556B2F;">0</span></button></a>
                 </li>
             </ul>
 
@@ -49,7 +47,7 @@
         <h2>Super Value Deals</h2>
         <h1>On All Products</h1>
         <p>Save more with coupons & upto 65% off!!</p>
-        <button>Shop Now</button>
+        <a href="shop.html"><button>Shop Now</button></a>
     </section>
     <section id="feature" class="section-p1">
         <div class="fe-box">
@@ -168,7 +166,8 @@
                 </div>
                 <a href="#"><span class="material-symbols-outlined" id="cart">shopping_cart</span></a>
             </div>
-            <div class="pro">
+            <div class="pro" onclick="openPopup('Nikon D5600 24.2MP DSLR', 'Description for Nikon D5600 24.2MP DSLR', '399', 'img/products/p6.webp')">
+                <div class="ribbon-2">50% OFF</div>
                 <img src="img/products/p6.webp" alt="">
                 <div class="des">
                     <span>Nikon</span>
@@ -180,11 +179,11 @@
                         <span class="material-symbols-outlined">star</span>
                         <span class="material-symbols-outlined">star</span>
                     </div>
-                    <h4>$699</h4>
+                    <h4 style="text-decoration: line-through;">$699</h4><h4 style="color: red; display:inline;">New Price  <span style="color:#556B2F;">$349</span></h4>
                 </div>
                 <a href="#"><span class="material-symbols-outlined" id="cart">shopping_cart</span></a>
             </div>
-            <div class="pro">
+            <div class="pro" openPopup="('Mirrorless Z 8', 'Description for Canon Camera', '699', 'img/products/p5.jpg')">
                 <img src="img/products/p7.webp" alt="">
                 <div class="des">
                     <span>Nikon</span>
@@ -234,7 +233,7 @@
                 <p>Co-Founder</p>
             </div>
             <div class="about-item">
-                <img src="https://images4.fanpop.com/image/photos/16300000/Random-people-random-16382026-600-800.jpg" alt="Team Member 2">
+                <img src="https://img.freepik.com/free-photo/close-up-displeased-young-bearded-man-glasses-wearing-colorful-shirt-isolated-pink-background-looking-camera-with-raised-eyebrow-people-emotions-concept_295783-2777.jpg" alt="Team Member 2">
                 <h3>Jane Austin</h3>
                 <p>Lead Designer</p>
             </div>
@@ -301,7 +300,7 @@
     <section id="cart-section">
         <h3>Cart</h3>
         <ul id="cartList"></ul>
-        <button id="checkout-button">Checkout</button>
+        <a href="orderForm.html"><button id="checkout-button">Checkout</button></a>
     </section>
     
     <footer>
@@ -311,6 +310,7 @@
                     <i class="fab fa-slack"></i>
                     <span class="logo_name">ApetureAvenue</span>
                 </div>
+                <a id="Cart"></a>
                 <div class="media-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -322,9 +322,9 @@
             <div class="link-boxes">
                 <ul class="box">
                     <li class="link_name">Company</li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">About us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="about.html">About us</a></li>
                     <li><a href="#">Get started</a></li>
                 </ul>
                 <ul class="box">
@@ -336,7 +336,7 @@
                 </ul>
                 <ul class="box">
                     <li class="link_name">Account</li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="login.html">Profile</a></li>
                     <li><a href="#">My account</a></li>
                     <li><a href="#">Prefrences</a></li>
                     <li><a href="#">Purchase</a></li>

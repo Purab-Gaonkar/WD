@@ -6,6 +6,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  e.target.elements.name.value = '';
+  e.target.elements.email.value = '';
+  e.target.elements.message.value = '';
+});
+function autofilling(f) {
+  if ($("#checkbox1").prop("checked")) {
+    f.newfirstname.value = f.firstname.value;
+    f.newlastname.value = f.lastname.value;
+    f.newaddress.value = f.address.value;
+  } else {
+    f.newfirstname = '';
+    f.newlastname = '';
+    f.newaddress = '';
+  }
+}
+
+$("#checkbox1").click(function() {
+  if ($("#checkbox1").prop("checked")) {
+    autofilling();
+  }
+});
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById('signup-form');
     contactForm.addEventListener('submit', function (event) {
@@ -22,9 +45,9 @@ function validateSignup() {
 
     if (userName.trim() === "" || email.trim() === "" || password.trim() === "") {
         alert("Please fill in all fields.");
-        return false; // Prevent form submission
+        return false;
     }
-    return true; // Allow form submission if fields are filled
+    return true; 
 }
 
 function validateLogin() {

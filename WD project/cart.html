@@ -24,17 +24,17 @@
         </table>
         <div class="cart-summary">
             <p>Total: <span id="cartTotal">$0.00</span></p>
-            <a href="checkout.html">Proceed to Checkout</a>
+            <a href="orderForm.html">Proceed to Checkout</a>
         </div>
     </main>
     <script>
-        // Retrieve the cart data from localStorage
+       
         const storedCart = JSON.parse(localStorage.getItem("cart"));
 
-        // Get the cart table element where you want to display the items
+   
         const cartTable = document.getElementById("cartTable");
 
-        // Loop through each item in the cart and display them
+       
         if (storedCart) {
             storedCart.forEach(item => {
                 const row = cartTable.insertRow(-1);
@@ -61,7 +61,7 @@
             });
         }
 
-        // Function to update the cart total
+        
         function updateTotal(input) {
             const row = input.parentElement.parentElement;
             const priceCell = row.getElementsByTagName("td")[1];

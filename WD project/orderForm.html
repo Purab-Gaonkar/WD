@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sales</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ordercss.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -29,63 +30,56 @@
             </ul>
         </div>
     </section>
-    <section class="form">
-        <br>
-        </div>
-        <form>
-            <label for="Name">Name <span style="color:red">*</span></label>
-            <br>
-            <br>
-            <input type="text" name="Fname" placeholder="First" required>
-            <input type="text" name="Lname" placeholder="Last" required>
-            <br>
-            <br>
-            <label for="Address">Shipping Address <span style="color:red">*</span></label><br><br>
-            <input type="text" name="line1" placeholder="Address Line 1" size="80" required><br><br>
-            <input type="text" name="line2" placeholder="Address Line 2" size="80"><br><br>
-            <input type="text" name="city" placeholder="City" required>
-            <select name="state" id="state" placeholder="State" required>
-                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                <option value="Assam">Assam</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Chhattisgarh">Chhattisgarh</option>
-                <option value="Goa">Goa</option>
-            </select>
-            <input type="text" name="pin-code" placeholder="Pincode" required><br><br>
-            <div class="conta">
-                <label for="Email">Email Address<span style="color:red">*</span></label><br><br>
-                <input type="email" name="Email" id="Email" size="50" required>
+    <form id="myform">
+        <header>Shipping Order Form</header>
+        <div class="area">
+          <div class="row">
+            <div class="col2">
+              <input type="text" name="firstname">
+              <label for="fistname">First Name</label>
             </div>
-            <div class="conta">
-                <label for="Phno">Phone Number<span style="color:red">*</span></label><br><br>
-                <input type="text" name="Phno" id="Phno" size="10" required>
+            <div class="col2">
+              <input type="text" name="lastname">
+              <label for="lastname">Last Name</label>
             </div>
-            <br>
-            <br>
-            <h3>My Order</h3><br>
-
-
-            <label for="pin-code">Pincode <span style="color:red">*</span></label><br>
-            <input type="text" name="pin-code" placeholder="Pincode" required><br><br>
-
-            <h3>Payment Information</h3>
-            <label for="card-number">Credit Card Number <span style="color:red">*</span></label><br>
-            <input type="text" name="card-number" placeholder="1234-5678-9012-3456" required><br><br>
-
-            <label for="expiration-date">Expiration Date <span style="color:red">*</span></label><br>
-            <input type="text" name="expiration-date" placeholder="MM/YY" required><br><br>
-
-            <label for="cvv">CVV <span style="color:red">*</span></label><br>
-            <input type="text" name="cvv" placeholder="123" required><br><br>
-
-            <!-- Additional fields can be added as needed -->
-
-            <input type="submit" value="Place Order">
-            
-        </form>
+          </div>
+          <div class="row">
+            <input type="text" name="phone" id="phone">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="row">
+            <input type="text" name="address" id="address">
+            <label for="address">Address</label>
+          </div>
+      
         </div>
-    </section>
+        <div class="area">
+          <div class="ckeckarea">
+            <input type="checkbox" name="checkbox1" id="checkbox1" onclick="autofilling(this.form)">
+            <label for="checkbox1">Check this box if order info and sending info are the same.</label>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col2">
+              <input type="text" name="newfirstname">
+              <label for="newfistname">First Name</label>
+            </div>
+            <div class="col2">
+              <input type="text" name="newlastname">
+              <label for="newlastname">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <input type="text" name="newaddress" id="newaddress">
+            <label for="newaddress">Sending Address</label>
+          </div>
+        </div>
+        <div class="row">
+          <input type="submit" value="Submit" class="btn">
+          <input type="submit" value="cancel" class="btn">
+        </div>
+      </form>
+      <script src="javascript.js"></script>
 </body>
 
 </html>
