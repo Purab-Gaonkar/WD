@@ -6,15 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Apeture Avenue</title>
-    <script src="javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+
 </head>
 
 <body>
+  
     <section id="header">
         <h3>Apeture Avenue</h3>
         <a href="index.html"><img src="img/logo.webp" class="logo"></a>
@@ -33,14 +35,13 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="cart.html">
-                        <span class="material-symbols-outlined">
-                            shopping_bag
-                        </span>
-                    </a>
+                <li>
+                    <button id="toggleCartButton"> <span class="material-symbols-outlined">
+                        shopping_bag
+                    </span><span id="cartCount" style="color: red;">0</span></button>
                 </li>
             </ul>
-            
+
         </div>
     </section>
     <section id="top">
@@ -80,7 +81,8 @@
         <h2>Featured Products</h2>
         <p>New Collection</p>
         <div class="pro-container">
-            <div class="pro">
+            <div class="pro"  
+                onclick="openPopup('Sony ALPHA ILCE-7M2K Mirrorless Camera', 'Description for Sony Camera', '$699', 'img/products/p1.jpg')">
                 <img src="img/products/p1.jpg" alt="">
                 <div class="des">
                     <span>Sony</span>
@@ -96,7 +98,10 @@
                 </div>
                 <a href="orderForm.html"><span class="material-symbols-outlined" id="cart">shopping_cart</span></a>
             </div>
-            <div class="pro">
+           
+            <div class="pro"
+                onclick="openPopup('Canon EOS 1500D 24.1 Digital SLR Camera (Black) with EF S18-55 is II Lens ', 'Description for Canon Camera', '$699', 'img/products/p2.avif')">
+                <div class="ribbon-2">On Sale</div>
                 <img src="img/products/p2.avif" alt="">
                 <div class="des">
                     <span>Canon</span>
@@ -112,7 +117,8 @@
                 </div>
                 <a href="#"><span class="material-symbols-outlined" id="cart">shopping_cart</span></a>
             </div>
-            <div class="pro">
+            <div class="pro"
+                onclick="openPopup('Sony Professional Video Camera ', 'Description for Canon Camera', '$699', 'img/products/p3.jpg')">
                 <img src="img/products/p3.jpg" alt="">
                 <div class="des">
                     <span>Sony</span>
@@ -128,7 +134,8 @@
                 </div>
                 <a href="#"><span class="material-symbols-outlined" id="cart">shopping_cart</span></a>
             </div>
-            <div class="pro">
+            <div class="pro"
+                onclick="openPopup('Nikon D850 DSLR Camera with 24-120 mm Lens Kit', 'Description for Canon Camera', '$699', 'img/products/p4.avif')">
                 <img src="img/products/p4.avif" alt="">
                 <div class="des">
                     <span>Nikon</span>
@@ -144,7 +151,8 @@
                 </div>
                 <a href="#"><span class="material-symbols-outlined" id="cart">shopping_cart</span></a>
             </div>
-            <div class="pro">
+            <div class="pro"
+                onclick="openPopup('Canon EOS R6 II', 'Description for Canon Camera', '699', 'img/products/p5.jpg')">
                 <img src="img/products/p5.jpg" alt="">
                 <div class="des">
                     <span>Canon</span>
@@ -210,24 +218,28 @@
             </div>
         </div>
     </section>
-    
+    <div id="slideshow">
+        <img src="img/Slide.jpg" alt="Slide 1">
+        <img src="img/slide2.jpg" alt="Slide 2">
+        <img src="img/slide3.jpg" alt="Slide 3">
+    </div>
     <section id="about">
-   
+
         <h2>About Us</h2>
         <p>Our Story and Mission</p>
         <div class="about-container">
             <div class="about-item">
-                <img src="img/about/team1.jpg" alt="Team Member 1">
+                <img src="https://dl.acm.org/do/10.1145/contrib-81100498554/full/Ran-portrait2019.jpg" alt="Team Member 1">
                 <h3>John lock</h3>
                 <p>Co-Founder</p>
             </div>
             <div class="about-item">
-                <img src="img/about/team2.jpg" alt="Team Member 2">
+                <img src="https://images4.fanpop.com/image/photos/16300000/Random-people-random-16382026-600-800.jpg" alt="Team Member 2">
                 <h3>Jane Austin</h3>
                 <p>Lead Designer</p>
             </div>
             <div class="about-item">
-                <img src="img/about/team3.jpg" alt="Team Member 3">
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80" alt="Team Member 3">
                 <h3>Mike John</h3>
                 <p>Marketing Manager</p>
             </div>
@@ -240,37 +252,56 @@
         <div class="testimonial-container">
             <div id="testimonial-slider">
                 <button id="prevButton">Previous</button>
-                
+
             </div>
             <div class="testimonial">
-                <img src="img/user1.jpg" alt="Customer 1">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80" alt="Customer 1">
                 <p>"Apeture Avenue has the best selection of camera gear. I found everything I needed for my photography
                     studio."</p>
                 <h5>John Regan</h5>
             </div>
             <div class="testimonial">
-                <img src="img/user2.jpg" alt="Customer 2">
+                <img src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg" alt="Customer 2">
                 <p>"Their customer service is top-notch. I had a question about a product, and they responded quickly
                     and helped me make the right choice."</p>
                 <h5>Austin Powers</h5>
             </div>
             <div class="testimonial">
-                <img src="img/user3.jpg" alt="Customer 3">
-                <p>"I've been a loyal customer of Apeture Avenue for years. Their products are reliable, and I always get
+                <img src="https://xsgames.co/randomusers/assets/avatars/male/77.jpg" alt="Customer 3">
+                <p>"I've been a loyal customer of Apeture Avenue for years. Their products are reliable, and I always
+                    get
                     excellent value for my money."</p>
                 <h5>Lisa Anderson</h5>
             </div>
             <div class="testimonial">
-                <img src="img/user4.jpg" alt="Customer 4">
-                <p>"The team at Apeture Avenue is fantastic. They go above and beyond to assist customers, and I appreciate
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQnUu9a18UzYyB2-ceuTCOuqAM-eUzfm70h3LXUyI-c-15ieFZGV-FGO9FKAST5-v83s&usqp=CAU" alt="Customer 4">
+                <p>"The team at Apeture Avenue is fantastic. They go above and beyond to assist customers, and I
+                    appreciate
                     their dedication."</p>
                 <h5>Michael Johnson</h5>
             </div>
             <div id="testimonial-slider">
-             
+
                 <button id="nextButton">Next</button>
             </div>
         </div>
+        <div id="productPopup" class="product-popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <img id="popupImage" src="" alt="">
+                <h2 id="popupProductName"></h2>
+                <p id="popupProductDescription"></p>
+                <p id="popupProductPrice" style="color: green;"></p>
+                <button id="addToCartButton" onclick="addToCartFromPopup()">Add to Cart</button>
+            </div>
+        </div>
+
+    </section>
+    
+    <section id="cart-section">
+        <h3>Cart</h3>
+        <ul id="cartList"></ul>
+        <button id="checkout-button">Checkout</button>
     </section>
     
     <footer>
@@ -334,6 +365,151 @@
             </div>
         </div>
     </footer>
+    <script>
+         
+        let cart = [];
+
+        function addToCartFromPopup() {
+            const name = document.getElementById("popupProductName").textContent;
+            const price = document.getElementById("popupProductPrice").textContent;
+            cart.push({ name, price });
+            addToCart(name, price);
+            updateCartDisplay();
+            closePopup();
+        }
+
+        function updateCartDisplay() {
+            const cartList = document.getElementById("cartList");
+            cartList.innerHTML = "";
+
+            cart.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ${item.price}`;
+                cartList.appendChild(li);
+            });
+        }
+        $(document).ready(function() {
+     
+    $(document).ready(function () {
+             
+            const cartItems =[]
+            });
+
+             
+            const cartList = $("#cartList");
+            cartItems.forEach(item => {
+                cartList.append(`<li>${item.name} - $${item.price}</li>`);
+            });
+
+             
+         
+
+             
+            $("#checkout-button").click(function () {
+                let total = 0;
+                cartItems.forEach(item => {
+                    total += item.price;
+                });
+
+                 
+                alert(`Total Price: $${total}`);
+            });
+        });
+
+     
+    updateCartDisplay();
+
+        function openPopup(name, description, price, image) {
+            document.getElementById("popupProductName").textContent = name;
+            document.getElementById("popupProductDescription").textContent = description;
+            document.getElementById("popupProductPrice").textContent = price;
+            document.getElementById("popupImage").src = image;
+            document.getElementById("productPopup").style.display = "block";
+        }
+  
+        function closePopup() {
+            document.getElementById("productPopup").style.display = "none";
+        }
+        function updateCartCount() {
+            const cartCountElement = document.getElementById("cartCount");
+            const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+             
+            const totalQuantity = storedCart.reduce((total, item) => total + item.quantity, 0);
+
+             
+            cartCountElement.textContent = totalQuantity;
+        }
+
+         
+        updateCartCount();
+
+        localStorage.removeItem("cart");
+
+        function addToCart(name, price) {
+            const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const existingItem = storedCart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                storedCart.push({ name, price, quantity: 1 });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(storedCart));
+
+             
+            updateCartCount();
+        }
+        $(document).ready(function() {
+     
+    let currentTestimonial = 0;
+
+    $("#toggleCartButton").click(function () {
+                $("#cart-section").toggle();
+            });
+     
+    function showTestimonial(index) {
+         
+        $('.testimonial').hide();
+         
+        $('.testimonial').eq(index).show();
+    }
+
+     
+    showTestimonial(currentTestimonial);
+
+     
+    $('#nextButton').click(function() {
+        currentTestimonial++;
+        if (currentTestimonial >= $('.testimonial').length) {
+            currentTestimonial = 0;  
+        }
+        showTestimonial(currentTestimonial);
+    });
+   
+
+     
+    $('#prevButton').click(function() {
+        currentTestimonial--;
+        if (currentTestimonial < 0) {
+            currentTestimonial = $('.testimonial').length - 1;  
+        }
+        showTestimonial(currentTestimonial);
+    });
+    $("#checkout-button").click(function () {
+                let total = 0;
+                cartItems.forEach(item => {
+                    total += item.price;
+                });
+
+                alert(`Total Price: $${total}`);
+            });
+});
+    </script>
+    <script src="javascript.js"></script>
+    
 </body>
 
 </html>

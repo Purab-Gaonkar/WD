@@ -55,7 +55,7 @@ body {
   width: 100%;
 }
 
-/* Header */
+
 .logo {
   width: 4rem;
   height: 3rem;
@@ -126,10 +126,78 @@ body {
 #top h4 {
   padding-bottom: 15px;
 }
-
+#slideshow {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#toggleCartButton {
+  background-color: rgba(0, 0, 0, 0);
+  color: #000;
+  align-content: center;
+}
+#slideshow img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
 #top h1 {
   color: darkgreen;
 }
+/* Styles for the product popup */
+.product-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  overflow: auto;
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  color: #000;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.popup-content img {
+  max-width: 100%;
+}
+
+h2, p, button {
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
 
 #top button {
   background-image: url("img/button.webp");
@@ -149,7 +217,22 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+.ribbon-2 {
+  --f: 10px; /* control the folded part*/
+  --r: 20px; /* control the ribbon shape */
+  --t: 10px; /* the top offset */
+  
+  color: rgb(255, 255, 255);
+  position: absolute;
+  inset: var(--t) calc(-1*var(--f)) auto auto;
+  padding: 0 10px var(--f) calc(10px + var(--r));
+  clip-path: 
+    polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,
+      calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)),
+      var(--r) calc(50% - var(--f)/2));
+  background: #15bd4a;
+  box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+}
 
 #feature .fe-box {
   width: 200px;
@@ -631,8 +714,11 @@ footer .bottom-details .bottom_text {
 #testimonials {
   background-color: #f7f7f7;
   padding: 60px 0;
-}
 
+}
+#testimonials:hover {
+  filter: none;
+}
 #testimonials h2 {
   font-size: 28px;
   text-align: center;
@@ -658,8 +744,12 @@ footer .bottom-details .bottom_text {
   margin: 0 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  filter: blur(3px); /* Initially blur the testimonial */
+  transition: filter 0.3s; /* Add a smooth transition effect */
 }
-
+.testimonial:hover{
+  filter: none;
+}
 .testimonial img {
   width: 100px;
   height: 100px;
@@ -688,6 +778,64 @@ footer .bottom-details .bottom_text {
   .testimonial {
     margin: 0 0 30px;
   }
+}
+#cart-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart-section h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#cartList {
+  list-style: none;
+  padding: 0;
+}
+
+#cartList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+#cartList li:last-child {
+  border-bottom: none;
+}
+
+#cartList li .product-name {
+  font-weight: bold;
+  flex: 1;
+  color: #333;
+}
+
+#cartList li .product-price {
+  color: #555;
+  margin-left: 20px;
+}
+
+#checkout-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#checkout-button:hover {
+  background-color: #0056b3;
 }
 
 /* About Us Section */
@@ -908,7 +1056,9 @@ pro-container {
 .subscription {
   margin-top: 40px;
 }
-
+#cart-section {
+  display: hidden; 
+}
 .subscription h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -937,9 +1087,7 @@ form button {
   border-radius: 25px;
 }
 
-/* Add this CSS to your style.css file */
 
-/* Animations */
 @keyframes fadeIn {
   0% {
     opacity: 0;
